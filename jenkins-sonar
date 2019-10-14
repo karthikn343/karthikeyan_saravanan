@@ -1,0 +1,6 @@
+sonar-scanner.bat 
+sonar.scm.disabled=true
+sonar.projectKey=jenkins-sonarqube
+sonar.sources=.
+sonar.host.url=http://localhost:9000
+sonar.login=b0a495f354206435e76e9d591eb2304933db5f14
