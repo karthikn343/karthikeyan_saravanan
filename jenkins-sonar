@@ -1,6 +1,12 @@
-sonar-scanner.bat 
-sonar.scm.disabled=true
-sonar.projectKey=jenkins-sonarqube
-sonar.sources=.
-sonar.host.url=http://localhost:9000
-sonar.login=b0a495f354206435e76e9d591eb2304933db5f14
+
+node {
+stage('SCM') {
+git credentialsId: 'aa037da9-20cd-46d4-bd16-77b3a771cc71', url: 'https://github.com/karthikn343/karthikeyan_saravanan.git'
+}
+stage('sonarqube analysis') {
+ def scannerHome = tool 'SonarScanner 4.0';
+withSonarQubeEnv {
+ sh "C:/Users/Administrator/Desktop/Sonarqube/sonar-scanner-4.0.0.1744-windows/bin/bin/sonar-scanner"
+}
+}
+}
