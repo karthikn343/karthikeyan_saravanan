@@ -6,7 +6,7 @@ git credentialsId: 'aa037da9-20cd-46d4-bd16-77b3a771cc71', url: 'https://github.
 stage('sonarqube analysis') {
  def scannerHome = tool 'SonarScanner 4.0.0.1744';
 withSonarQubeEnv('sonar-pipeline') {
- sh ""$(scannerHome)/bin/sonar-scanner -D"sonar.login=baf2b1930c4f3947e76851fbdfc0b1fa6af64648"""
+ sh ""${scannerHome}/bin/sonar-scanner -D sonar.login=baf2b1930c4f3947e76851fbdfc0b1fa6af64648""
 }
 }
 }
